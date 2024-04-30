@@ -16,9 +16,7 @@ function addStyleResource(rule: Config.Rule<Config.Rule<Config.Module>>, pattern
  * @returns a webpack config
  */
 function webpackConfigCallback(environments: Record<string, unknown>): Configuration {
-    checkNodejsVersion({
-        lowestVersion: 14,
-    });
+    checkNodejsVersion({ lowestVersion: 14 });
 
     // use env and process.env
     const { dev, prod } = environments;
@@ -34,7 +32,7 @@ function webpackConfigCallback(environments: Record<string, unknown>): Configura
     });
 
     ['vue-modules', 'vue', 'css-module', 'css-normal'].forEach(type => {
-        addStyleResource(basicConf.module.rule('scss').oneOf(type), [withBasePath('src/assets/_global-conf.scss')]);
+        addStyleResource(basicConf.module.rule('scss').oneOf(type), [withBasePath('src/assets/_global-vars.scss')]);
     });
 
     return basicConf.toConfig();
