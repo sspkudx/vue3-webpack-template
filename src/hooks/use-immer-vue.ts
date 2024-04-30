@@ -23,7 +23,7 @@ const useImmerVue = <T = unknown>(val: T | (() => T)) => {
         }
     };
 
-    return [shallowReadonly(tmp), updateFunc] as const;
+    return [shallowReadonly(tmp) as Readonly<ShallowRef<T>>, updateFunc] as const;
 };
 
 export default useImmerVue;

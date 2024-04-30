@@ -39,6 +39,11 @@ const genStyleConfigWithPreloader = (opts: Partial<{ styleType: StyleType; sourc
             sourceMap: boolean;
         } = { sourceMap };
 
+        // If use scss, the 'sourceMap' must be true
+        if (styleType === 'scss') {
+            selfLoaderOptions = Object.assign(selfLoaderOptions, { sourceMap: true });
+        }
+
         // for sass
         if (styleType === 'sass') {
             regex = /\.sass$/i;
@@ -116,7 +121,11 @@ function createPreStyleConf(
         };
     };
 
-    const baseStyleUse = [
+    // basic style loader list
+    const baseStyleUse: {
+        loader: string;
+        options?: Record<string, unknown>;
+    }[] = [
         {
             loader: isDev ? 'vue-style-loader' : miniLoader,
             options: {
@@ -136,11 +145,17 @@ function createPreStyleConf(
         },
     ];
 
+    // if is scss, add resolve-url-loader
+    if (extension === 'scss') {
+        baseStyleUse.push({ loader: 'resolve-url-loader' });
+    }
+
     const preConf = genStyleConfigWithPreloader({
         styleType: extension,
         sourceMap,
     });
 
+    // regex used
     let regex = /\.css$/i;
 
     if (preConf) {
