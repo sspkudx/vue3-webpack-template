@@ -51,6 +51,7 @@
     "style-loader": "^3.0.0",
     "style-resources-loader": "^1.5.0",
     "terser-webpack-plugin": "^5.3.10",
+    "thread-loader": "^3.0.4",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",

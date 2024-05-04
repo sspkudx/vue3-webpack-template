@@ -121,18 +121,29 @@ function createPreStyleConf(
         };
     };
 
+    // 根据环境变换vue-style-loader设置
+    const getVueStyleLoaderOpts = () => {
+        if (isDev) {
+            return {
+                loader: 'vue-style-loader',
+                options: {
+                    sourceMap,
+                    shadowMode: false,
+                },
+            };
+        }
+
+        return {
+            loader: miniLoader,
+        };
+    };
+
     // basic style loader list
     const baseStyleUse: {
         loader: string;
         options?: Record<string, unknown>;
     }[] = [
-        {
-            loader: isDev ? 'vue-style-loader' : miniLoader,
-            options: {
-                sourceMap,
-                shadowMode: false,
-            },
-        },
+        getVueStyleLoaderOpts(),
         {
             loader: 'css-loader',
             options: getCssLoaderOptions(),
