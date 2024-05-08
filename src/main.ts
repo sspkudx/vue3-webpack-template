@@ -1,7 +1,14 @@
 import { createApp } from 'vue';
 import { installPlugins } from '@/plugins';
 import App from './App.vue';
-import '@/assets/_global-vars.scss';
+import '@/assets/_global-conf.scss';
 
-// mount app
-installPlugins(createApp(App)).mount('#app');
+/** @description main function to handle app */
+const main = () => {
+    const vueApp = createApp(App);
+    // mount app
+    return installPlugins(vueApp).mount('#app');
+};
+
+// run the main function
+main();
