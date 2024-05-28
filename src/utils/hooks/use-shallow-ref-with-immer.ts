@@ -8,11 +8,9 @@ type UpdateFunc<T = unknown> = (draft: T) => void;
  * @param val value to be transferred to immutable
  * @returns An array whose first element is the immutable state, and the second one is an updater function.
  */
-const useImmerVue = <T = unknown>(val: T | (() => T)) => {
-    const realVal: T = typeof val === 'function' ? (val as () => T)() : val;
-
+const useShallowRefWithImmer = <T = unknown>(val: T) => {
     // trans the real value to the immutable one
-    const tmp = shallowRef(freeze<T>(realVal, true));
+    const tmp = shallowRef(freeze<T>(val, true));
 
     // updater
     const updateFunc = (updater: T | UpdateFunc<T>): void => {
@@ -26,4 +24,4 @@ const useImmerVue = <T = unknown>(val: T | (() => T)) => {
     return [shallowReadonly(tmp) as Readonly<ShallowRef<T>>, updateFunc] as const;
 };
 
-export default useImmerVue;
+export default useShallowRefWithImmer;
