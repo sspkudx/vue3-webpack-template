@@ -1,4 +1,4 @@
-import { shallowRef, shallowReadonly, type ShallowRef } from 'vue';
+import { shallowRef, readonly, type ShallowRef, type DeepReadonly } from 'vue';
 import { produce, freeze } from 'immer';
 
 type UpdateFunc<T = unknown> = (draft: T) => void;
@@ -21,7 +21,7 @@ const useShallowRefWithImmer = <T = unknown>(val: T) => {
         }
     };
 
-    return [shallowReadonly(tmp) as Readonly<ShallowRef<T>>, updateFunc] as const;
+    return [readonly(tmp) as DeepReadonly<ShallowRef<T>>, updateFunc] as const;
 };
 
 export default useShallowRefWithImmer;
