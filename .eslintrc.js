@@ -3,7 +3,7 @@ module.exports = {
     env: {
         node: true,
         es6: true,
-        es2023: true,
+        es2024: true,
         /**
          * The line below must be added here.
          * Otherwise, when writing <script setup>,
@@ -21,7 +21,7 @@ module.exports = {
     ],
     parser: 'vue-eslint-parser',
     parserOptions: {
-        ecmaVersion: 2023,
+        ecmaVersion: 2024,
         sourceType: 'module',
         parser: '@typescript-eslint/parser',
         ecmaFeatures: {
