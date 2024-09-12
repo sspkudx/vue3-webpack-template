@@ -1,10 +1,12 @@
+const { version: corejs } = require('core-js/package.json');
+
 module.exports = {
     presets: [
         [
             '@babel/preset-env',
             {
                 useBuiltIns: 'usage',
-                corejs: '3.36',
+                corejs,
             },
         ],
         '@babel/preset-typescript',

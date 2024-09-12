@@ -2,10 +2,6 @@
   "name": "webpack-basic",
   "version": "1.0.0",
   "description": "A basic project template with Vue 3 + TypeScript",
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
   "scripts": {
     "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" NODE_ENV=development webpack serve --env=dev",
     "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" NODE_ENV=production webpack --env=prod",
