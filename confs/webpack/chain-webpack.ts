@@ -16,11 +16,11 @@ const { uglifyJsMinify } = TerserPlugin;
 type ComposedConfigCallback = (conf: Config) => Config;
 
 export type BasicConfigOpts = Partial<{
-    /** @description is development */
+    /** is development */
     isDev: boolean;
-    /** @description is production */
+    /** is production */
     isProd: boolean;
-    /** @description is compile css with source map */
+    /** is compile css with source map */
     isCssWithSourceMap: (() => boolean) | boolean;
     /** Language of the project */
     lang: string;
@@ -33,7 +33,7 @@ export type BasicConfigOpts = Partial<{
 }>;
 
 /**
- * @description Use webpack-chain to create a basic `Config` object.
+ * Use webpack-chain to create a basic `Config` object.
  * @param opts
  * @returns
  */
@@ -48,7 +48,7 @@ export function createBasicConfig(opts: BasicConfigOpts = {}): Config {
         babelOnlyCompiles = [],
     } = opts;
 
-    /** @description to compose functions which can config conditionally */
+    /** to compose functions which can config conditionally */
     const composeConditionalConfiguration: ComposedConfigCallback = compose(
         (conf: Config) => loadStyles(conf, { isDev, isTakingSourceMap: isCssWithSourceMap, styleType: 'sass' }),
         (conf: Config) => loadStyles(conf, { isDev, isTakingSourceMap: isCssWithSourceMap, styleType: 'scss' }),

@@ -5,7 +5,7 @@ import { loader as miniLoader } from 'mini-css-extract-plugin';
 type StyleType = ['css', 'sass', 'scss', 'less', 'styl', 'stylus'][number];
 
 /**
- * @description Generate a function used by 'auto'
+ * Generate a function used by 'auto'
  * @param suffix style suffix without dot
  * @returns a function used by 'auto'
  */
@@ -23,7 +23,7 @@ const genAutoFunc = (suffix: StyleType = 'scss') => {
 };
 
 /**
- * @description Generate some config of css preprocessors
+ * Generate some config of css preprocessors
  * @param styleType style type supported
  */
 const genStyleConfigWithPreloader = (opts: Partial<{ styleType: StyleType; sourceMap: boolean }> = {}) => {
@@ -84,7 +84,7 @@ const genStyleConfigWithPreloader = (opts: Partial<{ styleType: StyleType; sourc
 };
 
 /**
- * @description create css or css-pre configuration
+ * create css or css-pre configuration
  * @param extension style type
  * @param opts other options
  * @returns basic config
@@ -185,7 +185,7 @@ function createPreStyleConf(
 }
 
 /**
- * @description configure the styles
+ * configure the styles
  * @param conf the Config instance
  * @param options the options of the function
  * @returns style conf

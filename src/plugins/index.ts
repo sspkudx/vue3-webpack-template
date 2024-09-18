@@ -5,7 +5,7 @@ import { store } from '@/store';
 type VueApp = ReturnType<typeof createApp>;
 
 /**
- * @description To install the plugins used by the project
+ * To install the plugins used by the project
  * @param appInst the vue application instance
  * @returns the app instance itself
  */

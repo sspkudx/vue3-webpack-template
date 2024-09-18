@@ -1,12 +1,12 @@
 import Config from 'webpack-chain';
 
-/** @description basic config of ts-loader */
+/** basic config of ts-loader */
 const tsLoaderBasicConf = {
     transpileOnly: true,
     happyPackMode: true,
 };
 
-/** @description Options when config js/ts loading */
+/** Options when config js/ts loading */
 type LoadJsOptions = Partial<{
     /** is at prod environment */
     isProd: boolean;
@@ -19,7 +19,7 @@ type LoadJsOptions = Partial<{
 }>;
 
 /**
- * @description add thread loader when isProd
+ * add thread loader when isProd
  * @param confInstance the webpack chain config instance
  * @param opts other options of this function
  */

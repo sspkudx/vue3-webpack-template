@@ -1,4 +1,4 @@
-/** @description router config files */
+/** router config files */
 import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
     },
 ];
 
-/** @description the router of the project */
+/** the router of the project */
 const hashRouter = createRouter({
     history: createWebHashHistory(),
     routes,

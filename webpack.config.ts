@@ -2,7 +2,7 @@ import { createBasicConfig, withBasePath, checkNodejsVersion } from './confs';
 import Config from 'webpack-chain';
 import type { Configuration } from 'webpack';
 
-/** @description Add global style-resource for scss file */
+/** Add global style-resource for scss file */
 function addStyleResource(rule: Config.Rule<Config.Rule<Config.Module>>, patterns: string[] = []) {
     rule.use('style-resource').loader('style-resources-loader').options({
         patterns,
@@ -10,7 +10,7 @@ function addStyleResource(rule: Config.Rule<Config.Rule<Config.Module>>, pattern
 }
 
 /**
- * @description Export a Config Function.
+ * Export a Config Function.
  * See: https://webpack.js.org/configuration/configuration-types/#exporting-a-function
  * @param  environments environments, like dev, prod ...
  * @returns a webpack config

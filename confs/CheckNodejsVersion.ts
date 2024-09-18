@@ -1,6 +1,6 @@
 import { versions, release } from 'process';
 
-/** @description Check node.js version before running programme. */
+/** Check node.js version before running programme. */
 export const checkNodejsVersion = (
     opts: Partial<{
         lowestVersion: number;

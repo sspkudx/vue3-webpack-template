@@ -3,7 +3,7 @@ import { installPlugins } from '@/plugins';
 import App from './App.vue';
 import '@/assets/_global-conf.scss';
 
-/** @description main function to handle app */
+/** main function to handle app */
 const main = () => {
     const vueApp = createApp(App);
     // mount app
