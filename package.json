@@ -64,7 +64,6 @@
   "dependencies": {
     "compose-function": "^3.0.3",
     "core-js": "^3.35.1",
-    "immer": "^10.0.3",
     "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "ress": "^5.0.2",
