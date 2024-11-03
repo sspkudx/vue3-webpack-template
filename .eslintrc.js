@@ -36,13 +36,7 @@ module.exports = {
         semi: ['error', 'always'],
         quotes: ['error', 'single', { avoidEscape: true }],
         indent: ['error', 4, { SwitchCase: 1 }],
-        'prettier/prettier': [
-            'error',
-            {},
-            {
-                usePrettierrc: true,
-            },
-        ],
+        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
         'vue/multi-word-component-names': 'off',
     },
 };
