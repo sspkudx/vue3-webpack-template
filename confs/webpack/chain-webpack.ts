@@ -174,6 +174,11 @@ export function createBasicConfig(opts: BasicConfigOpts = {}): Config {
                     .port(2080)
                     .hot(true)
                     .open(false)
+                    .set('client', {
+                        overlay: {
+                            warnings: false,
+                        },
+                    })
                     .end()
                     .plugin('ESLintPlugin')
                     .use(ESLintPlugin, [
